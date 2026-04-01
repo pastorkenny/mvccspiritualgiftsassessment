@@ -12,39 +12,42 @@ export interface Opportunity {
 
 // All Ministry Platform opportunities referenced in mappings
 export const opportunities: Record<number, Opportunity> = {
-  52: { id: 52, title: "Children's Ministry Volunteer", description: "Serve elementary-aged kids through engaging lessons and activities." },
-  109: { id: 109, title: "Children's Ministry Youth Helper", description: "Youth helpers assisting in children's ministry during services." },
-  54: { id: 54, title: "Coffee Bar", description: "Create a welcoming atmosphere by serving coffee and refreshments." },
-  55: { id: 55, title: "Connector", description: "Help guests feel welcome and connected to the church community." },
-  72: { id: 72, title: "Parking", description: "Assist with parking lot logistics and greet people as they arrive." },
-  51: { id: 51, title: "Usher", description: "Welcome attendees, assist with seating, and help services run smoothly." },
-  60: { id: 60, title: "Worship Band", description: "Lead the congregation in worship through music and song." },
-  59: { id: 59, title: "Worship Tech Team", description: "Run sound, lighting, and visuals to support worship services." },
-  61: { id: 61, title: "Outreach Team", description: "Engage in local and global outreach to share God's love." },
+  44: { id: 44, title: "Meals Ministry Team", description: "Provide meals for those in need due to newborn babies, death in the family, or medical issues." },
+  51: { id: 51, title: "Ushers", description: "Help with finding seats, greeting guests, handing out bulletins — First Impressions Team." },
+  52: { id: 52, title: "Children's Ministry Volunteer", description: "Serve in God's Backyard planting seeds of faith in the next generation." },
+  55: { id: 55, title: "Connectors", description: "Connect with people as they enter, help them find their way, and equip them to worship." },
+  56: { id: 56, title: "Student Ministry (Middle School)", description: "Invest in middle schoolers on Wednesday nights through mentoring and community." },
+  57: { id: 57, title: "Student Ministry (High School)", description: "Walk alongside high schoolers on Sunday nights as they grow in faith." },
+  58: { id: 58, title: "Student Ministry (College)", description: "Serve in college ministry, investing in college-age students as they grow in faith." },
+  59: { id: 59, title: "Worship Tech Team", description: "Run sound, projection, and programming to support worship services." },
+  61: { id: 61, title: "Outreach Team", description: "Show care and grace through acts of kindness and sharing the Gospel at local events." },
   62: { id: 62, title: "Safety & Security Team", description: "Help ensure a safe environment for everyone on campus." },
-  73: { id: 73, title: "Prayer Team", description: "Intercede for the church body and pray with people during services." },
-  74: { id: 74, title: "Care Team", description: "Provide compassionate support and care to those in need." },
-  75: { id: 75, title: "Marriage Mentors", description: "Mentor and support married couples through a Christ-centered program." },
-  44: { id: 44, title: "Meals Ministry", description: "Prepare and deliver meals to families during times of need." },
-  219: { id: 219, title: "Child Care Team", description: "Care for infants and toddlers in a safe, loving nursery environment." },
+  72: { id: 72, title: "Parking", description: "Greet people in the parking lot, direct to spaces, and welcome arrivals." },
+  73: { id: 73, title: "Prayer Team", description: "Lift up Spirit-led prayers for the needs of others and church leaders." },
+  74: { id: 74, title: "Care Team", description: "Intentionally care for tangible needs, creating community by serving people in need." },
+  75: { id: 75, title: "Marriage Mentors", description: "Build Christ-centered marriages that glorify God and provide a foundation for the next generation." },
+  109: { id: 109, title: "Children's Ministry Youth Helper", description: "Youth serving in God's Backyard to plant seeds of faith in the next generation." },
+  219: { id: 219, title: "Child Care Team", description: "Support classes, groups, and events throughout the year caring for children." },
+  239: { id: 239, title: "Grounds Team", description: "Care for church grounds by mowing, landscaping, and helping with outdoor needs." },
+  240: { id: 240, title: "Worship Team", description: "Serve through vocals, electric guitar, acoustic guitar, bass, keys, or drums." },
+  54: { id: 54, title: "Coffee Bar", description: "Create a welcoming atmosphere by serving coffee and refreshments." },
   224: { id: 224, title: "Hospitality Team", description: "Help create a warm and inviting experience for everyone at MVCC." },
-  56: { id: 56, title: "Student Ministry (Middle School)", description: "Invest in middle schoolers through mentoring and fun community." },
-  57: { id: 57, title: "Student Ministry (High School)", description: "Walk alongside high schoolers as they grow in faith." },
+  900: { id: 900, title: "MVU Course Facilitator", description: "Teach or facilitate Mountain View University courses that help people grow in faith." },
 };
 
 // Gift → most relevant MP opportunity IDs
 export const giftToOpportunities: Record<GiftCategory, number[]> = {
-  teaching: [52, 56, 57],
-  pastoring: [75, 74, 57],
+  teaching: [900, 52, 56, 57, 58],
+  pastoring: [75, 74, 57, 58],
   mercy: [74, 44, 73],
-  hospitality: [54, 55, 224],
-  serving: [51, 72, 44],
-  leadership: [57, 56, 60],
+  hospitality: [54, 55, 224, 51, 72],
+  serving: [51, 72, 44, 239],
+  leadership: [57, 56, 58, 240],
   evangelism: [61, 55],
   exhortation: [74, 75, 73],
   administration: [59, 62],
   giving: [61, 44],
-  wisdom: [75, 73],
+  wisdom: [75, 73, 900],
 };
 
 // Questionnaire team name → closest MP opportunity ID
@@ -59,10 +62,12 @@ export const teamToOpportunity: Record<string, number> = {
   "Adoption & Foster Support": 74,
   "Women's Ministry": 74,
   "Men's Ministry": 74,
-  "Young Adult/College": 0, // no direct MP opportunity
+  "Young Adult/College": 58,
+  "Mountain View University": 900,
 };
 
 export function getOpportunityUrl(id: number): string {
+  if (id === 900) return 'https://mvccfrederick.com/mvu';
   return `${MP_BASE_URL}${id}`;
 }
 

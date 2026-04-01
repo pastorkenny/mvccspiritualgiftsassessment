@@ -12,18 +12,18 @@ export const skillOptions: { value: SkillCategory; label: string }[] = [
 
 // Skill -> MP Opportunity IDs
 export const skillToOpportunities: Record<string, number[]> = {
-  'Teaching': [52, 56, 57],         // Children's, Middle School, High School
-  'Tangibly': [51, 72, 44],         // Usher, Parking, Meals
+  'Teaching': [52, 56, 57, 900],    // Children's, Middle School, High School, MVU
+  'Tangibly': [51, 72, 44, 239],    // Usher, Parking, Meals, Grounds
   'Giving': [61],                    // Outreach
-  'Cooking': [44, 54],              // Meals Ministry, Coffee Bar
+  'Cooking': [44, 54],               // Meals Ministry, Coffee Bar
   'Organizing': [59, 62],           // Worship Tech, Safety & Security
   'Counseling': [74, 75, 73],       // Care Team, Marriage Mentors, Prayer
-  'Designing': [59, 60],            // Worship Tech, Worship Band
+  'Designing': [59, 240],           // Worship Tech, Worship Team
 };
 
 // Skill -> Team names (for team recommendations)
 export const skillToTeams: Record<string, string[]> = {
-  'Teaching': ['School Age', 'Middle School Students', 'High School Students'],
+  'Teaching': ['School Age', 'Middle School Students', 'High School Students', 'Mountain View University'],
   'Tangibly': ['Outreach Ministry', 'Adoption & Foster Support'],
   'Giving': ['Outreach Ministry'],
   'Cooking': ['Adoption & Foster Support'],

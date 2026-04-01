@@ -60,6 +60,12 @@ export const teams: Team[] = [
     name: "Outreach Ministry",
     description: "Local and global outreach opportunities including short-term trips, partnerships, and community service.",
     link: "https://mvccfrederick.com/outreach"
+  },
+  {
+    id: "mvu",
+    name: "Mountain View University",
+    description: "Teach or facilitate MVU courses designed to help people know God, His word, and live out their faith in everyday life.",
+    link: "https://mvccfrederick.com/mvu"
   }
 ];
 

@@ -16,22 +16,22 @@ export const passionOptions: { value: PassionCategory; label: string }[] = [
 
 // Passion -> MP Opportunity IDs
 export const passionToOpportunities: Record<string, number[]> = {
-  'Education': [52, 56, 57],       // Children's, Middle School, High School
+  'Education': [52, 56, 57, 900],  // Children's, Middle School, High School, MVU
   'Abuse': [74],                     // Care Team
   'Finances': [61],                  // Outreach
   'Poverty': [61, 44],              // Outreach, Meals Ministry
-  'Arts/Music': [60],               // Worship Band
-  'Outdoors': [72],                 // Parking (campus/outdoors)
+  'Arts/Music': [240],               // Worship Team
+  'Outdoors': [72, 239],            // Parking, Grounds Team
   'Marriage': [75],                  // Marriage Mentors
   'Safety': [62],                    // Safety & Security
-  'Construction': [61],              // Outreach (serve projects)
+  'Construction': [61, 239],         // Outreach, Grounds Team
   'Parenting': [219, 52],           // Child Care, Children's Ministry
   'Health': [74, 73],               // Care Team, Prayer Team
 };
 
 // Passion -> Team names (for team recommendations)
 export const passionToTeams: Record<string, string[]> = {
-  'Education': ['School Age', 'Middle School Students', 'High School Students'],
+  'Education': ['School Age', 'Middle School Students', 'High School Students', 'Mountain View University'],
   'Abuse': ['Adoption & Foster Support'],
   'Finances': ['Outreach Ministry'],
   'Poverty': ['Outreach Ministry'],

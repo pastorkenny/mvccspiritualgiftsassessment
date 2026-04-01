@@ -131,17 +131,16 @@ export function generateRecommendations(
     return 'profile-based';
   };
 
-  // Map scores to priority tiers: top third = 1, middle = 2, rest = 3
+  // Take only the top 3 teams and assign priority by rank
   const recommendations: Recommendation[] = [];
-  sorted.forEach(([teamName, data], index) => {
+  sorted.slice(0, 3).forEach(([teamName, data], index) => {
     const team = getTeamByName(teamName);
     if (!team) return;
-    const priority = index < Math.ceil(sorted.length / 3) ? 1 : index < Math.ceil((sorted.length * 2) / 3) ? 2 : 3;
     recommendations.push({
       team,
       matchType: deriveMatchType(data.dimensions),
       giftMatch: data.giftMatch,
-      priority,
+      priority: index + 1,
     });
   });
 

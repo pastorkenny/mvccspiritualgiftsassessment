@@ -290,7 +290,7 @@ export default function ResultsPage() {
             <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
               Recommended Ministry Teams
             </h3>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-3 gap-4">
               {results.recommendations.map((rec, index) => {
                 const matchInfo = getMatchTypeLabel(rec.matchType);
                 return (

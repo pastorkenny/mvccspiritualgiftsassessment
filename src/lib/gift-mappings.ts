@@ -7,7 +7,8 @@ export const giftToTeamMapping: Record<GiftCategory, string[]> = {
     "School Age",
     "Middle School Students",
     "High School Students",
-    "Young Adult/College"
+    "Young Adult/College",
+    "Mountain View University"
   ],
   pastoring: [
     "Marriage Ministry",
@@ -56,7 +57,8 @@ export const giftToTeamMapping: Record<GiftCategory, string[]> = {
   wisdom: [
     "Marriage Ministry",
     "Men's Ministry",
-    "Women's Ministry"
+    "Women's Ministry",
+    "Mountain View University"
   ]
 };
 
