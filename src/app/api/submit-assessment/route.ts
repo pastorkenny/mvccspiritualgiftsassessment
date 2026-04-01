@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/lib/supabase';
+import { getSupabaseAdmin } from '@/lib/supabase';
 import { questions } from '@/lib/questions';
 import { calculateGiftScores, getTopGifts, generateRecommendations } from '@/lib/calculations';
 import { AssessmentSubmission, QuestionResponse } from '@/types';
 import { sendAssessmentNotification } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
+  const supabaseAdmin = getSupabaseAdmin();
   try {
     const body: AssessmentSubmission = await request.json();
     const { firstName, lastName, email, responses, teamInterests, passions = [], skills = [] } = body;
